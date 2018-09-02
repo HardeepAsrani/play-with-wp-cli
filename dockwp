@@ -1,0 +1,27 @@
+#!/bin/bash
+
+folder=$(random-folder)
+
+mkdir $folder
+
+cp docker-compose.yml install-wp wp-cli.phar $folder
+
+cd $folder
+
+echo Welcome to Play with WP-CLI! We will help you in learning WP-CLI in a real server with WordPress and WP-CLI Installed. This project is made with Docker and ttyd. $'\n'
+
+sleep 1
+
+echo Let Docker run its magic first... $'\n'
+
+sleep 1
+
+docker-compose up -d
+
+sleep 1
+
+echo $'\n'Please wait while the conection is taking place. $'\n'
+
+sleep 10
+
+docker-compose exec wordpress install-wp

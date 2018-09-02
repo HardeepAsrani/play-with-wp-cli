@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo Installing WP-CLI...$'\n'
+
+sleep 5
+
+chmod +x /usr/local/bin/wp
+
+useradd -p $(openssl passwd -1 password) howdy
+
+chown howdy:howdy -R *
+
+sleep 5
+
+su -s /bin/bash howdy
